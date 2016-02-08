@@ -28,8 +28,8 @@ public class ApiClient {
 
     // The API base URL
     // TODO: Replace by a mechanism to read the API base from the Shared Preferences
-    //private static final String API_BASE = "http://10.0.2.2:8080/";
-    private static final String API_BASE = "https://federatedbirds.appspot.com/";
+    private static final String API_BASE = "http://10.0.2.2:8080/";
+    //private static final String API_BASE = "https://federatedbirds.appspot.com/";
 
     // A singleton instance
     private static ApiClient mInstance;
@@ -120,6 +120,14 @@ public class ApiClient {
         body.addProperty("login", login);
         body.addProperty("password", password);
         return post("auth/token", body, String.class);
+    }
+
+    public String subscription(String login, String password, String email) throws IOException {
+        JsonObject body = new JsonObject();
+        body.addProperty("login", login);
+        body.addProperty("password", password);
+        body.addProperty("email", email);
+        return post("users", body, String.class);
     }
 
     public Message postMessage(String text) throws IOException {

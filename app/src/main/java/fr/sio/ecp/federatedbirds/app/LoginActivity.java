@@ -22,6 +22,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //button inscription launchs Subscription Activity
+        findViewById(R.id.inscription).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inscription();
+            }
+        });
+
     }
 
     private void login() {
@@ -51,4 +59,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void inscription()
+    {
+        startActivity(SubscriptionActivity.newIntent(this));
+    }
 }

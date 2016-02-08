@@ -15,28 +15,34 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/usernameSub"
             android:hint="@string/username"
             android:layout_width="150dp"
             android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/passwordSub"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:layout_width="150dp"
             android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/emailSub"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/Sinscrire"
             style="?attr/buttonBarButtonStyle"
-            android:text="@string/login"
+            android:text="@string/sinscrire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/inscription"
+            android:id="@+id/reset"
             style="?attr/buttonBarButtonStyle"
-            android:text="@string/inscription"
+            android:text="@string/Annuler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

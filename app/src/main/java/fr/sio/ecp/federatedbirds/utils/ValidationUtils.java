@@ -16,4 +16,10 @@ public class ValidationUtils {
         return password != null && password.matches(PASSWORD_PATTERN);
     }
 
+    public static boolean validateEmail(String email) {
+        // Here we use a library from Apache Commons to do the validation
+        //return EmailValidator.getInstance(false).isValid(email);
+        return true;
+    }
+
 }
