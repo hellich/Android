@@ -30,6 +30,14 @@ public class SubscriptionActivity extends AppCompatActivity {
                 subscription();
             }
         });
+
+        //button annuler
+        findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+        });
     }
 
     private void subscription() {
@@ -65,5 +73,16 @@ public class SubscriptionActivity extends AppCompatActivity {
         taskFragment.setArguments(login, password, email);
         taskFragment.show(getSupportFragmentManager(), "subscription_task");
 
+    }
+
+    private void reset() {
+        // Get form views
+        EditText usernameText = (EditText) findViewById(R.id.usernameSub);
+        usernameText.setText("");
+        EditText passwordText = (EditText) findViewById(R.id.passwordSub);
+        passwordText.setText("");
+        EditText emailText = (EditText) findViewById(R.id.emailSub);
+        emailText.setText("");
+        usernameText.requestFocus();
     }
 }
