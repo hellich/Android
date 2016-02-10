@@ -21,11 +21,11 @@ import fr.sio.ecp.federatedbirds.model.User;
 /**
  * Created by Michaël on 30/11/2015.
  */
-public class UserFollowedFragment extends UserFragment{
+public class UserFollowersFragment extends UserFragment{
 
     @Override
     public Loader<List<User>> onCreateLoader(int id, Bundle args) {
-        return new FollowedLoader(getContext(), null);
+        return new FollowersLoader(getContext(), null);
     }
 
 }

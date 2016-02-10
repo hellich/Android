@@ -111,8 +111,14 @@ public class ApiClient {
     public List<User> getUserFollowed(Long userId) throws IOException {
         String id = userId != null ? Long.toString(userId) : "me";
         TypeToken<List<User>> type = new TypeToken<List<User>>() {};
-        return get("users", type.getType());
-        //return get("users/" + id + "/followed", type.getType());
+        //return get("users", type.getType());
+        return get("users/" + id + "/followed", type.getType());
+    }
+
+    public List<User> getUserFollowers(Long userId) throws IOException {String id = userId != null ? Long.toString(userId) : "me";
+        TypeToken<List<User>> type = new TypeToken<List<User>>() {};
+        //return get("users", type.getType());
+        return get("users/" + id + "/followers", type.getType());
     }
 
     public String login(String login, String password) throws IOException {
