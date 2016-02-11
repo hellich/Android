@@ -1,5 +1,6 @@
 package fr.sio.ecp.federatedbirds.app;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,13 +40,22 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MessageViewH
 
     @Override
     public void onBindViewHolder(MessageViewHolder holder, int position) {
-        User user = mUsers.get(position);
+        final User user = mUsers.get(position);
 
         Picasso.with(holder.mAvatarView.getContext())
                 .load(user.avatar)
                 .into(holder.mAvatarView);
 
         holder.mUsernameView.setText(user.login);
+
+        holder.mAvatarView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), UserDetailsActivity.class);
+                i.putExtra("userId" , user.id);
+                v.getContext().startActivity(i);
+            }
+        });
     }
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
