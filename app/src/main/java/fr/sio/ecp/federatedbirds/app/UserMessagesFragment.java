@@ -4,14 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +29,7 @@ public class UserMessagesFragment extends Fragment
     private static final int REQUEST_POST_MESSAGE = 0;
     private long userId;
 
-    private MessagesAdapter mMessagesAdapter;
+    private MessagesForUserDetailAdapter mMessagesAdapter;
 
     @Nullable
     @Override
@@ -47,7 +44,7 @@ public class UserMessagesFragment extends Fragment
         super.onViewCreated(view, savedInstanceState);
         RecyclerView listView = (RecyclerView) view.findViewById(R.id.list_userDetail);
         listView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mMessagesAdapter = new MessagesAdapter();
+        mMessagesAdapter = new MessagesForUserDetailAdapter();
         listView.setAdapter(mMessagesAdapter);
     }
 
