@@ -1,5 +1,6 @@
 package fr.sio.ecp.federatedbirds.app;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import fr.sio.ecp.federatedbirds.R;
 import fr.sio.ecp.federatedbirds.model.Message;
+import fr.sio.ecp.federatedbirds.model.User;
 
 /**
  * Created by Michaël on 24/11/2015.
@@ -39,13 +41,24 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
 
     @Override
     public void onBindViewHolder(MessageViewHolder holder, int position) {
-        Message message = mMessages.get(position);
-
+        final Message message = mMessages.get(position);
         Picasso.with(holder.mUserAvatarView.getContext())
                 .load(message.user.avatar)
                 .into(holder.mUserAvatarView);
 
         holder.mTextView.setText(message.text);
+
+        holder.mUserAvatarView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), UserDetailsActivity.class);
+                i.putExtra("userId", message.user.id);
+                i.putExtra("userAvatar", message.user.avatar);
+                i.putExtra("username", message.user.login);
+                i.putExtra("userEmail", message.user.email);
+                v.getContext().startActivity(i);
+            }
+        });
     }
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {

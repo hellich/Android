@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        final DrawerLayout drawer = ((DrawerLayout) findViewById(R.id.drawer));
+
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
@@ -47,22 +49,26 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.main_container, fragment)
                                 .commit();
+                        drawer.closeDrawer(navigationView);
                         return true;
                     case R.id.followed:
                         fragment = new UserFollowedFragment();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.main_container, fragment)
                                 .commit();
+                        drawer.closeDrawer(navigationView);
                         return true;
                     case R.id.followers:
                         fragment = new UserFollowersFragment();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.main_container, fragment)
                                 .commit();
+                        drawer.closeDrawer(navigationView);
                         return true;
                     case R.id.settings:
                         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                         startActivity(intent);
+                        drawer.closeDrawer(navigationView);
                         return true;
                 }
                 ((DrawerLayout) findViewById(R.id.drawer)).closeDrawer(navigationView);

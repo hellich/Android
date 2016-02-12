@@ -22,6 +22,7 @@
     <Button
         android:id="@+id/userButton"
         style="?attr/buttonBarButtonStyle"
+        android:text=""
         android:layout_width="16dp"
         android:layout_height="48dp"
         android:layout_weight="1"/>

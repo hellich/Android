@@ -100,7 +100,7 @@ public class ApiClient {
 
     public List<Message> getMessages(Long userId) throws IOException {
         TypeToken<List<Message>> type = new TypeToken<List<Message>>() {};
-        String path = userId == null ? "messages" : "users/" + userId + "/messages";
+        String path = userId == null ? "messages" : "messages/" + userId + "/author";
         return get(path, type.getType());
     }
 

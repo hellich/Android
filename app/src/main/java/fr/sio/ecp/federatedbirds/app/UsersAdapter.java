@@ -52,7 +52,10 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MessageViewH
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), UserDetailsActivity.class);
-                i.putExtra("userId" , user.id);
+                i.putExtra("userId", user.id);
+                i.putExtra("userAvatar" , user.avatar);
+                i.putExtra("username" , user.login);
+                i.putExtra("userEmail" , user.email);
                 v.getContext().startActivity(i);
             }
         });
