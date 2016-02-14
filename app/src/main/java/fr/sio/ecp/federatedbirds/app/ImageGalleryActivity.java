@@ -15,11 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 
-import fr.sio.ecp.federatedbirds.ApiClient;
 import fr.sio.ecp.federatedbirds.R;
 
 public class ImageGalleryActivity extends AppCompatActivity {
@@ -31,7 +27,7 @@ public class ImageGalleryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_gallery_demo);
+        setContentView(R.layout.activity_image_gallery);
 
         Button buttonLoadImage = (Button) findViewById(R.id.UploadAvatarButton);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
