@@ -23,5 +23,6 @@
     <string name="Annuler">Annuler</string>
     <string name="email">Email</string>
     <string name="followers">Abonnés</string>
+    <string name="changer_avatar">Changer Avatar</string>
 
 </resources>

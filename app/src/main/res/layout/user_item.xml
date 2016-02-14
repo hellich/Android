@@ -20,9 +20,16 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/userButton"
+        android:id="@+id/userButtonSuivre"
         style="?attr/buttonBarButtonStyle"
-        android:text=""
+        android:text="Suivre"
+        android:layout_width="16dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/userButtonDesuivre"
+        style="?attr/buttonBarButtonStyle"
+        android:text="Dé-suivre"
         android:layout_width="16dp"
         android:layout_height="48dp"
         android:layout_weight="1"/>

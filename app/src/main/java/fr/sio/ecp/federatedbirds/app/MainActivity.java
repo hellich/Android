@@ -70,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         drawer.closeDrawer(navigationView);
                         return true;
+                    case R.id.upload_avatar:
+                        Intent intent_gallery = new Intent(MainActivity.this, ImageGalleryActivity.class);
+                        startActivity(intent_gallery);
+                        drawer.closeDrawer(navigationView);
+                        return true;
                 }
                 ((DrawerLayout) findViewById(R.id.drawer)).closeDrawer(navigationView);
                 return false;

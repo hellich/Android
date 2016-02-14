@@ -30,6 +30,7 @@ public class ApiClient {
     // TODO: Replace by a mechanism to read the API base from the Shared Preferences
     private static final String API_BASE = "http://10.0.2.2:8080/";
     //private static final String API_BASE = "https://federatedbirds.appspot.com/";
+    //private static final String API_BASE = "http://127.0.0.1:8080/";
 
     // A singleton instance
     private static ApiClient mInstance;
@@ -58,6 +59,11 @@ public class ApiClient {
     // An internal method to execute a POST request
     private <T> T post(String path, Object body, Type type) throws IOException {
         return method("POST", path, body, type);
+    }
+
+    // An internal method to execute a PUT request
+    private <T> T put(String path, Object body, Type type) throws IOException {
+        return method("PUT", path, body, type);
     }
 
     /**
@@ -142,4 +148,7 @@ public class ApiClient {
         return post("messages", message, Message.class);
     }
 
+    public String uploadAvatar(byte[] avatar) throws IOException {
+        return put("users/me", avatar, String.class);
+    }
 }
